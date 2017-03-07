@@ -18,7 +18,7 @@ Bisphenol-A also called as BPA is a toxic chemical component present in polycarb
 Solution:
 B(P)AWARE is a mobile application that provides instant information about a product’s BPA content or toxicity content by just scanning the barcode of a product. Since barcode is universally present in every product that enters the consumer world, the application uses it as an identifier to get the product’s information from the database. This aids consumer to become aware of products containing toxic substances, so, people will just be a scan away from being BPA aware. The application will also suggest products that are BPA free or new arrivals in the market as a substitute to the products containing BPA.
 
-Idea# 3: Wether Forecast
+Idea# 3: Weather Forecast
 
 Problem:
 METEOROLOGY study found that when television meteorologists in Kansas predicted that there was a 100% chance of rain, and it didn’t rain at all one-third of the times it was reported. And there is much anecdotal evidence for forecasters’ unreliability. In 2009, heavy rains dampened a “barbecue summer” prediction by Britain’s Met office. In January last year American meteorologists apologised profusely on Twitter for predicting a “crippling” and “historic” blizzard that never arrived.The aim will be to achieve the precision of say, Google Maps, which “foretells” traffic conditions down the road in real-time. But given the cosmic odds, predicting the future accurately may remain a distant dream for meteorologists.The financial potential of enhanced weather prediction through big data is huge. According to Weather Analytics, 33% of worldwide GDP is affected by the weather. 
