@@ -9,6 +9,7 @@ Also, sellers and producers of electronic voting machines were legally not oblig
 
 Solution:
 The solution explores the current security shortcomings of the voting system, as well as the feasibility of an online voting system implemented using blockchain technology. Despite security risks and concerns, block-chain data storage in combination with electronic voting is a progressive and secure option for our voting systems. Blockchain technology makes it possible to attain a highly credible and verifiable election process at an inexpensive cost.
+##Prof: This is not an exploration project, rather implementation. you have to implement a blockchain based voting machine software system. Approved on condition of fully implemented demoable software. 
 
 Idea# 2: B(PA)WARE
 
@@ -17,6 +18,7 @@ Bisphenol-A also called as BPA is a toxic chemical component present in polycarb
 
 Solution:
 B(P)AWARE is a mobile application that provides instant information about a product’s BPA content or toxicity content by just scanning the barcode of a product. Since barcode is universally present in every product that enters the consumer world, the application uses it as an identifier to get the product’s information from the database. This aids consumer to become aware of products containing toxic substances, so, people will just be a scan away from being BPA aware. The application will also suggest products that are BPA free or new arrivals in the market as a substitute to the products containing BPA.
+## Prof: Relying on barcode database limits your implementation as there is no freely available datasets that contain all plastic products. also you are providing the info that already stored in the database, there is no novelty in your solution. - Not approved. 
 
 Idea# 3: Weather Forecast
 
@@ -31,7 +33,7 @@ https://ranjanr.blogspot.com/
 https://www.fda.gov/food/ingredientspackaginglabeling/foodadditivesingredients/ucm355155.htm
 http://www.ibmbigdatahub.com/blog/business-value-weather-data
 
-
+##Prof: Not approved
 Idea3 4: Social marketing footprint
 
 Problem:
