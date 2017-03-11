@@ -41,3 +41,4 @@ Today, social networks are the first choice for marketing campaigns. They promis
 
 Solution:
 This can be solved by acquiring social data by crawling a number of public APIs, storing the data in a database and building a web interface to search through the data. This can also be done by using graph database, where the social graph will be quantified and analyzed. The different data sources (Facebook, Twitter, etc…) will be correlated to discover links and interactions. The goal of the project is to quantify and classify the marketing footprint of companies on social networks.
+###Prof: social media outlets like twitter and facebook do not share data sets freely anymore, they have very restricted set of APIs which limit the scope of implementation. Also hundreds of solutions exist, no novelty - Not approved.
