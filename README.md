@@ -11,6 +11,10 @@ Solution:
 The solution explores the current security shortcomings of the voting system, as well as the feasibility of an online voting system implemented using blockchain technology. Despite security risks and concerns, block-chain data storage in combination with electronic voting is a progressive and secure option for our voting systems. Blockchain technology makes it possible to attain a highly credible and verifiable election process at an inexpensive cost.
 ##Prof: This is not an exploration project, rather implementation. you have to implement a blockchain based voting machine software system. Approved on condition of fully implemented demoable software. 
 
+
+Introductory video for VoteChain: https://www.youtube.com/watch?v=yXVksS4U2a0&rel=0&utm_source=transactional&utm_medium=email&utm_campaign=Transactional-Publish-success
+
+
 Idea# 2: B(PA)WARE
 
 Problem:
