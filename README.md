@@ -1,48 +1,61 @@
-# Project-Team-5
+Car Lease Demo
+=======
 
-Idea# 1: VoteChain
+##Deploying the demo##
+To deploy to Bluemix simply use the button below then follow the instructions. This will generate the NodeJS server and the Blockchain service for you.
 
-Problem: 
-Today’s elections can be manipulated and voters can be coerced to vote against their will. Many a times, the credibility of the election process itself is questionable. In such a scenario, we need an election process that is transparent, fair, inexpensive and convenient. No singular protocol for managing votes. Voting equipment varies across jurisdiction. Several different voting systems are commonly employed, including paper ballots, Directly Recording Electronic (DRE) systems and Electronically operated vote counting machines (EVMs). Punch card voting systems are also used, as well as ballot marking devices to assist disabled voters. In addition to votes being cast in a multitude of way, that information is also recorded and stored non-uniformly. Paper ballots are typically scanned into a computer system, either at the polling place or a centralized location for that jurisdiction. DRE systems store vote information in the machine’s hard drive and some systems have the capacity to generate a paper audit trail, but not all jurisdictions maintain an audit trail. 
+[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://hub.jazz.net/deploy/index.html?repository=https://github.com/IBM-Blockchain/car-lease-demo.git)
 
-Also, sellers and producers of electronic voting machines were legally not obligated to notify anyone about problems cropping up in regards to their machines. Similarly, there exists no resource for public officials to learn about potential problems with their voting machines ahead of time
+To deploy the demo locally follow the instructions [here](Documentation/Installation%20Guide.md#deploying-locally)
 
-Solution:
-The solution explores the current security shortcomings of the voting system, as well as the feasibility of an online voting system implemented using blockchain technology. Despite security risks and concerns, block-chain data storage in combination with electronic voting is a progressive and secure option for our voting systems. Blockchain technology makes it possible to attain a highly credible and verifiable election process at an inexpensive cost.
-##Prof: This is not an exploration project, rather implementation. you have to implement a blockchain based voting machine software system. Approved on condition of fully implemented demoable software. 
+##Application overview##
+This application is designed to demonstrate how assets can be modeled on the Blockchain using a car leasing scenario. In the scenario vehicles are modeled using Blockchain technology with the following attributes:
 
+| Attribute       | Type                                                                                                  |
+| --------------- | ----------------------------------------------------------------------------------------------------- |
+| V5cID           | Unique string formed of two chars followed by a 7 digit int, used as the key to identify the vehicle  |
+| VIN             | 15 digit int                                                                                          |
+| Make            | String                                                                                                |
+| Model           | String                                                                                                |
+| Colour          | String                                                                                                |
+| Reg             | String                                                                                                |
+| Owner           | Identity of participant                                                                               |
+| Scrapped        | Boolean                                                                                               |
+| Status          | Int between 0 and 4                                                                                   |
+| LeaseContractID | ChaincodeID, currently unused but will store the ID of the lease contract for the vehicle             |
 
-Introductory video for VoteChain: https://www.youtube.com/watch?v=yXVksS4U2a0&rel=0&utm_source=transactional&utm_medium=email&utm_campaign=Transactional-Publish-success
+The application is designed to allow participants to interact with the vehicle assets creating, updating and transferring them as their permissions allow. The participants included in the application are as follows:
 
+| Participant    | Permissions                                                          |
+| -------------- | ---------------------------------------------------------------------|
+| Regulator      | Create, Read (All vehicles), Transfer                                |
+| Manufacturer   | Read (Own vehicles), Update (VIN, Make, Model, Colour, Reg), Transfer|
+| Dealership     | Read (Own vehicles), Update (Colour, Reg), Transfer                  |
+| Lease Company  | Read (Own vehicles), Update (Colour, Reg), Transfer                  |
+| Leasee         | Read (Own vehicles), Update (Colour, Reg), Transfer                  |
+| Scrap Merchant | Read (Own vehicles), Scrap                                           |
 
-Idea# 2: B(PA)WARE
+The demonstration allows a view of the ledger that stores all the interactions that the above participants have has with their assets. The ledger view shows the regulator every transaction that has occurred showing who tried to to what at what time and to which vehicle. The ledger view also allows the user to see transactions that they were involved with as well as showing the interactions with the assets they own before they owned them e.g. they can see when it was created.
 
-Problem:
-Bisphenol-A also called as BPA is a toxic chemical component present in polycarbonate plastic used in the manufacturing of certain beverage containers and liners of canned food items. BPA-based containers have BPA-based liners which prevents the contents of the can from reacting with the can surface, hence preventing corrosion and leaching of can materials into food. But why is BPA toxic? It can mimic our hormones and disrupt the endocrine system which is the sole controller of functions of the body from a cellular level. Continuous and high level exposure to BPA can lead to altered immune system, structural brain damage and causes reproductive problems. In 2008, usage of BPA in the manufacturing of products made from polycarbonate plastic became a matter of serious concern which fueled FDA experts to conduct over 300 studies analyzing various consumer products and its conclusion helped to ban the use of BPA in baby bottles, sippy cups and other toddler items. But there are still many products out in the consumer world as stated above containing toxic chemicals, prolonged exposure to which can cause serious health problems. So being aware of the daily-use products and its contents has become inevitable to maintain a long lasting healthy body functionality.
+> Note: The demo currently does not include the ability to lease cars however shows the process of what would happen once the lease has ended and the final payment has been made showing the lease company transferring full ownership of the asset to the leasee.
 
-Solution:
-B(P)AWARE is a mobile application that provides instant information about a product’s BPA content or toxicity content by just scanning the barcode of a product. Since barcode is universally present in every product that enters the consumer world, the application uses it as an identifier to get the product’s information from the database. This aids consumer to become aware of products containing toxic substances, so, people will just be a scan away from being BPA aware. The application will also suggest products that are BPA free or new arrivals in the market as a substitute to the products containing BPA.
-## Prof: Relying on barcode database limits your implementation as there is no freely available datasets that contain all plastic products. also you are providing the info that already stored in the database, there is no novelty in your solution. - Not approved. 
+##Application scenario##
+The scenario goes through the lifecycle of a car which has the following stages:
 
-Idea# 3: Weather Forecast
+![Application scenario overview](/Images/Scenario_Overview.png)
 
-Problem:
-METEOROLOGY study found that when television meteorologists in Kansas predicted that there was a 100% chance of rain, and it didn’t rain at all one-third of the times it was reported. And there is much anecdotal evidence for forecasters’ unreliability. In 2009, heavy rains dampened a “barbecue summer” prediction by Britain’s Met office. In January last year American meteorologists apologised profusely on Twitter for predicting a “crippling” and “historic” blizzard that never arrived.The aim will be to achieve the precision of say, Google Maps, which “foretells” traffic conditions down the road in real-time. But given the cosmic odds, predicting the future accurately may remain a distant dream for meteorologists.The financial potential of enhanced weather prediction through big data is huge. According to Weather Analytics, 33% of worldwide GDP is affected by the weather. 
+####Stages:####
 
-Solution:
-The best solution for this problem is that we can have the weather prdecition more precise with the big data environment. The method which will be used is hadoop with map reduce program to anayse the sensor data stored in the climatic data center. Map reduce is the framework for highly computing the huge dataset. So by using map reduce with hadoop is can be used for analysing the large data set increasing the effecient  and enhanced weather forecast. This helps us in predicting the mininum and maximun temperature which is turn is helpfull for many industrial and corporate preplanning.
+ 1. Vehicle is created as a template by the regulator.
+ 2. Vehicle template is transferred to the manufacturer.
+ 3.  Manufacturer updates the vehicle template to define it as a vehicle giving it a make, model, reg etc.
+ 4. Manufacturer transfers the vehicle to dealership to be sold.
+ 5. Dealership transfers the vehicle to a lease company.
+ 6. Lease company transfers the vehicle to a leasee. The vehicle is not leased instead the application is showing what would happen if the lease were to have come to an end and the leasee activated the purchase option.
+ 7. Leasee transfers the vehicle to a scrap merchant so that it can be scrapped.
+ 8. Scrap merchant scraps the vehicle.
 
-References: 
-https://ranjanr.blogspot.com/
-https://www.fda.gov/food/ingredientspackaginglabeling/foodadditivesingredients/ucm355155.htm
-http://www.ibmbigdatahub.com/blog/business-value-weather-data
+##Component model##
+The demo is built using a 3 tier architecture. The user interacts with the demo using a [web front end](Documentation/Client%20Side.md) that is provided by the NodeJS server in the middle tier. This web front end uses JavaScript to make HTTP requests to the NodeJS server which has an API ([defined here](Documentation/API Methods.md)) which in turn makes calls via HTTP to the HyperLedger fabric to get details about the blockchain and also interact with the [chaincode](Chaincode/src/vehicle_code/vehicles.go). Information on the chaincode interface can be found [here](Documentation/Chaincode Interface.md)
 
-##Prof: Not approved
-Idea3 4: Social marketing footprint
-
-Problem:
-Today, social networks are the first choice for marketing campaigns. They promise to serve well targeted, viral, highly customizable advertisement while getting direct customer feedback and engagement. The numbers generated by the Internet companies serving digital advertisements are astronomical. Therefore, it is important to know which of these marketing strategies are actually benificial to the company, so that we can make the necessary improvements, thus increasing the overall company profit.
-
-Solution:
-This can be solved by acquiring social data by crawling a number of public APIs, storing the data in a database and building a web interface to search through the data. This can also be done by using graph database, where the social graph will be quantified and analyzed. The different data sources (Facebook, Twitter, etc…) will be correlated to discover links and interactions. The goal of the project is to quantify and classify the marketing footprint of companies on social networks.
-###Prof: social media outlets like twitter and facebook do not share data sets freely anymore, they have very restricted set of APIs which limit the scope of implementation. Also hundreds of solutions exist, no novelty - Not approved.
+![Technical Component Model](/Images/Technical_Component_Model.png)
