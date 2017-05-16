@@ -1,5 +1,9 @@
-**Votechain**
+**Votechain**   
 =============
+
+
+[View Application](http://ec2-54-193-103-101.us-west-1.compute.amazonaws.com:8080)
+
 
 Voting is a fundamental right of every citizen of a democratic country. This is done to choose their government, who work for the betterment of the country. But we come across many instances of frauds happening within the system, from ballot stuffing and voter impersonation, to illegal activities of the electoral officers. Also, there are various ways of casting a vote, be it EVMs or paper ballots, and securing all these methods is challenging. In this paper, we propose a uniform online voting system called VoteChain, using blockchain technology as the security provider. Using this system, the voting process can be secured against vote tampering, as we record all the transactions made. 
 
